@@ -1,13 +1,16 @@
 version: '3'
 services:
-  db:
-    image: mysql:latest
-    command: --default-authentication-plugin=mysql_native_password
-    volumes:
-      - "./.mysql-data/db:/var/lib/mysql"
+  database:
+    image: 'postgres:alpine' # use alpine official postgres version
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpw
-      MYSQL_DATABASE: workshop_db
-      MYSQL_USER: workshop_user
-      MYSQL_PASSWORD: workshop_password
+    ports:
+      - "5432:5432"
+    env_file:
+      - database.env # configure postgres
+    volumes:
+      - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+volumes:
+  database-data: # named volumes can be managed easier using docker-compose
+
+  # docker-compose run database bash
+  # psql --host=##### --username=##### --dbname=#####
