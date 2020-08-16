@@ -1,0 +1,13 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - "./.mysql-data/db:/var/lib/mysql"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpw
+      MYSQL_DATABASE: workshop_db
+      MYSQL_USER: workshop_user
+      MYSQL_PASSWORD: workshop_password
