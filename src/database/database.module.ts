@@ -4,7 +4,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 @Module({
     imports: [
         TypeOrmModule.forRoot({
-            // ssl: true,
+            ssl: true,
             type: 'postgres',
             host: 'localhost',
             port: 5432,
