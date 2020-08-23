@@ -13,8 +13,8 @@ export class MessageService {
     }
     async createMessage(messageNew: MessageDto): Promise<MessageEntity> {
         const item = new MessageEntity();
-        item.message = messageNew.message;
         item.nick = messageNew.nick;
+        item.message = messageNew.message;
         return this.messageRepository.save(item)
     }
     async updateMessage(idMessage: number, messageUpdate: MessageDto): Promise<MessageEntity> {

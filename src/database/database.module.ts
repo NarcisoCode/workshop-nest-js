@@ -4,7 +4,6 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 @Module({
     imports: [
         TypeOrmModule.forRoot({
-            ssl: true,
             type: 'postgres',
             host: 'localhost',
             port: 5432,
@@ -13,6 +12,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
             database: 'workshop_db',
             entities: [__dirname + '/../**/*.entity{.ts,.js}'],
             synchronize: true,
+            logging: true
           }),
     ]
 })

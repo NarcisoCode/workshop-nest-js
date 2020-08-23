@@ -1,17 +1,17 @@
-import { Controller, Post, Body, Get, Put, Delete, Res, HttpStatus, Param } from '@nestjs/common';
+import { Controller, Post, Body, Get, Put, Delete, Res, HttpStatus, Param, Header } from '@nestjs/common';
 import { MessageDto } from './dto/message.dto';
 import { MessageService } from './message.service';
 
 @Controller('message')
 export class MessageController {
-    constructor(private messageService: MessageService) {
-    }
+    constructor(private messageService: MessageService) {}
     @Post()
     create(@Body() createMessageDto: MessageDto, @Res() response) {
+        console.log("Controlador - " + createMessageDto + " || " + createMessageDto.nick + " || " + createMessageDto.message)
         this.messageService.createMessage(createMessageDto).then( message => {
             response.status(HttpStatus.CREATED).json(message)
-        }).catch(() => {
-            response.status(HttpStatus.FORBIDDEN).json({message: 'error en la creacion del mensaje'})
+        }).catch((e) => {
+            response.status(HttpStatus.FORBIDDEN).json({message: 'error en la creacion del mensaje', details: e})
         })
     }
     @Get()
