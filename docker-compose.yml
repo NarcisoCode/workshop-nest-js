@@ -1,7 +1,7 @@
 version: '3'
 services:
   database:
-    image: 'postgres:alpine' # use alpine official postgres version
+    image: 'postgres:latest' # use alpine official postgres version
     restart: always
     ports:
       - "5432:5432"
