@@ -6,7 +6,7 @@
 
 ## Cosas que aprendí
 
-En mi experiencia desarrollando este proyecto pude ver como trabajar con TypeORM uno de los patrones del mapeador de datos mas usado en javascript, en mi caso lo conecte con postgresql aun que no use migraciones las entidades fue mas que suficiente para estudio.
+En mi experiencia desarrollando este proyecto pude ver como trabajar con TypeORM uno de los patrones de mapeador de datos mas usado en javascript, en mi caso lo conecte con postgresql aunque no use migraciones las entidades fue mas que suficiente para estudio.
 
 Uno de los patrones que me pareció interesante es DTO (Objeto de transferencia de datos) que nos permite limitar tanto la recepción como el envió de los datos y es increíble cuando lo mezclas con class-validator una gran librería que te permite olvidarte de tareas repetitivas de validación y con la opción de poder modificar los mensajes de error de una forma muy elegante mediante los decoradores.
 
